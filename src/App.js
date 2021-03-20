@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react-dom";
+import { withStyles } from "@material-ui/core/styles";
+
+import Container from "@material-ui/core/Container";
+import CustomizedSlider from "./components/Slider";
+import ButtonSizes from "./components/Buttons";
+import TextArea from "./components/TextArea";
+
+const ContainerApp = withStyles({
+  root: {
+    paddingTop: "40px",
+  },
+})(Container);
+
+const ContainerBlock = withStyles({
+  root: {
+    paddingTop: "40px",
+    display: "flex",
+  },
+})(Container);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContainerApp>
+      <h1>Select:</h1>
+      <ButtonSizes />
+      <ContainerBlock>
+        <CustomizedSlider />
+        <TextArea />
+      </ContainerBlock>
+    </ContainerApp>
   );
 }
 
